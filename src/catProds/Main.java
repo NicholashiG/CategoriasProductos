@@ -63,7 +63,7 @@ public class Main {
 
 		Empresa empresa = new Empresa("ACME", categorias);
 				
-		System.out.println(empresa.encontrarProductoColor("Púrpura", envasados, 0, 0));
+		System.out.println(empresa.encontrarProductoColor("Amarillo", envasados, 0, 0));
 		
 
 	}

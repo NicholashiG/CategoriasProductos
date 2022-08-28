@@ -38,7 +38,7 @@ public class Empresa {
 		// categoría del nivel anterior, es decir, si estaba en la categoría cero, pasa
 		// a la categoría 1
 		// -------------------------------------
-		
+
 		System.out.println("Valor de i: " + i);
 		System.out.println("Valor de j: " + j);
 
@@ -59,51 +59,40 @@ public class Empresa {
 				}
 			}
 		}
-		
-		
+
 		if (cat.getListaCategorias() != null) {
 			j = 0;
 			int tam = cat.getListaCategorias().size();
 			System.out.println("Tiene subcategorías: " + tam);
-			
-			if (i <= (tam-1)) {
+
+			if (i <= (tam - 1)) {
 				System.out.println("Entra a la categoría " + i);
 				if (encontrarProductoColor(color, cat.getListaCategorias().get(i), i, j)) {
 					System.out.println("La categoría no tiene hermanas");
 					return true;
-				}
-				else {
-					System.out.println("Entra a la categoría " + (i + 1));
-					if (encontrarProductoColor(color, cat.getListaCategorias().get(i+1), i, j)) {
-						System.out.println("La categoría tiene hermanas");
-						return true;
+				} else {
+					if (i + 1 <= (tam - 1)) {
+						System.out.println("Entra a la categoría " + (i + 1));
+						if (encontrarProductoColor(color, cat.getListaCategorias().get(i + 1), i, j)) {
+							System.out.println("La categoría tiene hermanas");
+							return true;
+						}
+
 					}
 				}
-				
+
 			}
 
-			
-			
 		}
 
 		// -------------------------------------
 
 		/*
 		 * 
-		 * j = 0;
-			Categoria subCat;
-			subCat = cat.getListaCategorias().get(i);
-			System.out.println(subCat.getNombre());
-			boolean a = encontrarProductoColor(color, subCat, i+1, j);
-			if (a) {
-				return true;
-			}
-			else {
-				a = encontrarProductoColor(color, subCat, i+2, j);	
-				if (a) {
-					return true;
-				}
-			}
+		 * j = 0; Categoria subCat; subCat = cat.getListaCategorias().get(i);
+		 * System.out.println(subCat.getNombre()); boolean a =
+		 * encontrarProductoColor(color, subCat, i+1, j); if (a) { return true; } else {
+		 * a = encontrarProductoColor(color, subCat, i+2, j); if (a) { return true; } }
 		 * 
 		 * 
 		 * 
