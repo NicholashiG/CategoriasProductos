@@ -38,13 +38,76 @@ public class Empresa {
 		// categoría del nivel anterior, es decir, si estaba en la categoría cero, pasa
 		// a la categoría 1
 		// -------------------------------------
+		
+		System.out.println("Valor de i: " + i);
+		System.out.println("Valor de j: " + j);
 
-		System.out.println(color);
-		return false;
+		if (cat.getListaProductos() != null) {
+			if (j <= cat.getListaProductos().size() - 1) {
+
+				if (cat.getListaProductos().get(j).getColor().equals(color)) {
+					System.out.println("Entra al producto " + j);
+					return true;
+				}
+
+				else {
+					System.out.println("Entra al producto " + (j + 1));
+					boolean a = encontrarProductoColor(color, cat, i, j + 1);
+					if (a) {
+						return true;
+					}
+				}
+			}
+		}
+		
+		
+		if (cat.getListaCategorias() != null) {
+			j = 0;
+			int tam = cat.getListaCategorias().size();
+			System.out.println("Tiene subcategorías: " + tam);
+			
+			if (i <= (tam-1)) {
+				System.out.println("Entra a la categoría " + i);
+				if (encontrarProductoColor(color, cat.getListaCategorias().get(i), i, j)) {
+					System.out.println("La categoría no tiene hermanas");
+					return true;
+				}
+				else {
+					System.out.println("Entra a la categoría " + (i + 1));
+					if (encontrarProductoColor(color, cat.getListaCategorias().get(i+1), i, j)) {
+						System.out.println("La categoría tiene hermanas");
+						return true;
+					}
+				}
+				
+			}
+
+			
+			
+		}
 
 		// -------------------------------------
 
 		/*
+		 * 
+		 * j = 0;
+			Categoria subCat;
+			subCat = cat.getListaCategorias().get(i);
+			System.out.println(subCat.getNombre());
+			boolean a = encontrarProductoColor(color, subCat, i+1, j);
+			if (a) {
+				return true;
+			}
+			else {
+				a = encontrarProductoColor(color, subCat, i+2, j);	
+				if (a) {
+					return true;
+				}
+			}
+		 * 
+		 * 
+		 * 
+		 * 
 		 * Categoria categ;
 		 * 
 		 * boolean x = false;
@@ -112,6 +175,8 @@ public class Empresa {
 		 * } } } System.out.println("Retorna falso y no entra a ninguna condición");
 		 * return x;
 		 */
+		return false;
+
 	}
 
 	public void encontrarPrecioMayorA(int precio, Categoria cat) {
