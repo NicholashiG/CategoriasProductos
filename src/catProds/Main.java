@@ -63,7 +63,14 @@ public class Main {
 
 		Empresa empresa = new Empresa("ACME", categorias);
 				
-		System.out.println(empresa.encontrarProductoColor("Amarillo", envasados, 0, 0));
+		Boolean colorExists = (empresa.encontrarProductoColor("Lila", envasados, 0, 0));
+		if (colorExists) {
+			System.out.println("El color solicitado existe dentro del inventario");
+		}
+		else {
+			System.out.println("El color solicitado NO existe dentro del inventario");
+
+		}
 		
 
 	}

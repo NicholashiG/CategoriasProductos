@@ -39,19 +39,19 @@ public class Empresa {
 		// a la categoría 1
 		// -------------------------------------
 
-		System.out.println("Valor de i: " + i);
-		System.out.println("Valor de j: " + j);
+		//System.out.println("Valor de i: " + i);
+		//System.out.println("Valor de j: " + j);
 
 		if (cat.getListaProductos() != null) {
 			if (j <= cat.getListaProductos().size() - 1) {
 
 				if (cat.getListaProductos().get(j).getColor().equals(color)) {
-					System.out.println("Entra al producto " + j);
+					//System.out.println("Entra al producto " + j);
 					return true;
 				}
 
 				else {
-					System.out.println("Entra al producto " + (j + 1));
+					//System.out.println("Entra al producto " + (j + 1));
 					boolean a = encontrarProductoColor(color, cat, i, j + 1);
 					if (a) {
 						return true;
@@ -63,18 +63,18 @@ public class Empresa {
 		if (cat.getListaCategorias() != null) {
 			j = 0;
 			int tam = cat.getListaCategorias().size();
-			System.out.println("Tiene subcategorías: " + tam);
+			//System.out.println("Tiene subcategorías: " + tam);
 
 			if (i <= (tam - 1)) {
-				System.out.println("Entra a la categoría " + i);
+				//System.out.println("Entra a la categoría " + i);
 				if (encontrarProductoColor(color, cat.getListaCategorias().get(i), i, j)) {
-					System.out.println("La categoría no tiene hermanas");
+					//System.out.println("La categoría no tiene hermanas");
 					return true;
 				} else {
 					if (i + 1 <= (tam - 1)) {
-						System.out.println("Entra a la categoría " + (i + 1));
+						//System.out.println("Entra a la categoría " + (i + 1));
 						if (encontrarProductoColor(color, cat.getListaCategorias().get(i + 1), i, j)) {
-							System.out.println("La categoría tiene hermanas");
+							//System.out.println("La categoría tiene hermanas");
 							return true;
 						}
 
