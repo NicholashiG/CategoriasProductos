@@ -13,7 +13,7 @@ public class Main {
 		Producto prod2 = new Producto("Azul", 5000);
 		Producto prod3 = new Producto("Gris", 5000);
 		Producto prod4 = new Producto("Negro", 2);
-		Producto prod5 = new Producto("Rojo", 10000);
+		Producto prod5 = new Producto("Rojo", 1000);
 		Producto prod6 = new Producto("Amarillo", 19000);
 		Producto prod7 = new Producto("Verde", 100);
 		Producto prod8 = new Producto("Amarillo", 1000);
@@ -111,9 +111,17 @@ public class Main {
 
 		if (cantProductosMayorExists > 0) {
 
-			JOptionPane.showMessageDialog(null,
-					"Hay " + cantProductosMayorExists + " producto(s) con precio mayor o igual a $" + precio);
+			if (cantProductosMayorExists == 1) {
 
+				JOptionPane.showMessageDialog(null,
+						"Hay " + cantProductosMayorExists + " producto con precio mayor o igual a $" + precio);
+
+			} else {
+
+				JOptionPane.showMessageDialog(null,
+						"Hay " + cantProductosMayorExists + " productos con precio mayor o igual a $" + precio);
+
+			}
 		} else {
 
 			JOptionPane.showMessageDialog(null, "No hay productos mayores o iguales a $" + precio);

@@ -104,7 +104,7 @@ public class Empresa {
 			if (j <= cat.getListaProductos().size() - 1) {
 				// Compara a j para que no se desborde con el arraylist de productos
 				if (cat.getListaProductos().get(j).getPrecio() >= (precio)) {
-					// Entra al producto j
+					// Entra al producto j y envía para el siguiente
 					return ((cant + 1) + encontrarProductoMayorA(precio, cat, i, j + 1, cant));
 					// Retorna la cantidad más uno en caso de que la condición se cumpla, y
 					// adicionalmente se pasa
