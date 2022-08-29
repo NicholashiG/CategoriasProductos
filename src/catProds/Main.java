@@ -13,7 +13,7 @@ public class Main {
 		Producto prod2 = new Producto("Azul", 5000);
 		Producto prod3 = new Producto("Gris", 5000);
 		Producto prod4 = new Producto("Negro", 2);
-		Producto prod5 = new Producto("Rojo", 6000);
+		Producto prod5 = new Producto("Rojo", 16000);
 		Producto prod6 = new Producto("Amarillo", 19000);
 		Producto prod7 = new Producto("Verde", 100);
 		Producto prod8 = new Producto("Amarillo", 1000);
