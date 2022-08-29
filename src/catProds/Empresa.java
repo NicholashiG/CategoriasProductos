@@ -128,7 +128,7 @@ public class Empresa {
 				int val = cant; // Es una variable local para sumar en caso de que tenga o no más categorías
 								// En caso de que sí tenga, se le suma a val la cantidad retornada por la
 								// función
-				val = encontrarProductoMayorA(precio, cat.getListaCategorias().get(i), i, j, cant);
+				val += encontrarProductoMayorA(precio, cat.getListaCategorias().get(i), i, j, cant);
 				if (i + 1 <= (tam - 1)) {
 					// Compara que exista una siguiente categoría
 					// Entra a la categoría siguiente en caso de tener;
