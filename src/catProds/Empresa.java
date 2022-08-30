@@ -110,6 +110,12 @@ public class Empresa {
 					// adicionalmente se pasa
 					// al siguiente producto y lo suma a la cantidad anterior
 				}
+
+				else {
+					// Retorna el siguente producto en caso de que el producto actual no entre
+					// en la condición del precio
+					return encontrarProductoMayorA(precio, cat, i, j + 1, cant);
+				}
 			}
 
 		}

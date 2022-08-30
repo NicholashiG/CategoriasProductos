@@ -11,7 +11,7 @@ public class Main {
 		// Productos Envasados:
 		Producto prod1 = new Producto("Verde", 2000);
 		Producto prod2 = new Producto("Azul", 5000);
-		Producto prod3 = new Producto("Gris", 10000);
+		Producto prod3 = new Producto("Gris", 12000);
 		Producto prod4 = new Producto("Negro", 2);
 		Producto prod5 = new Producto("Rojo", 1000);
 		Producto prod6 = new Producto("Amarillo", 19000);
